@@ -1,10 +1,8 @@
 'use strict'
 
-// use require with a reference to bundle the file and use it in this file
-// const example = require('./example')
-const gameEvents = require('./events.js')
+// const store = require('./store.js')
 
-$('.box').on('click', gameEvents.gameClick)
+//
 //
 // click handler for divs
 //   >this will reference the new events.js file
