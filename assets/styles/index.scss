@@ -1,2 +1,29 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
+
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+.container-fluid {
+  background-color: #eda740;
+}
+
+.row {
+  background-color: #00f;
+  // height: 300px;
+  // width: 300px;
+}
+
+.box {
+  // height: 250px;
+  background-color: #46cee2;
+  border-color: #000;
+  border-radius: 10px;
+  border-width: 20px;
+}
+// nav {
+//   background-color: #f0f;
+//   border-color: #000;
+// }
+.box {
+  border: 1px solid #000;
+  // height: 200px;
+}
