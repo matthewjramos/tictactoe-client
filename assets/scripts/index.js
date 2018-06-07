@@ -5,6 +5,7 @@
 const gameEvents = require('./events.js')
 
 $('.box').on('click', gameEvents.gameClick)
+$('#sign-out').on('click', gameEvents.signOutClick)
 //
 // click handler for divs
 //   >this will reference the new events.js file

@@ -1,6 +1,15 @@
 'use strict'
 
-// const store = require('./store.js')
+
+// POST	/sign-up	users#signup
+// POST	/sign-in	users#signin
+// DELETE	/sign-out	users#signout
+// PATCH	/change-password	users#changepw
+// GET	/games	games#index
+// POST	/games	games#create
+// GET	/games/:id	games#show
+// PATCH	/games/:id	games#update
+// GET	/games/:id/watch	games#watch
 
 //
 //
