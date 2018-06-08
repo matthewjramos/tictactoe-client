@@ -1,17 +1,35 @@
 'use strict'
 
+const getFormFields = require('../../lib/get-form-fields.js')
+const gameApi = require('./api.js')
+const gameUi = require('./ui.js')
+
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
 
 // below function used to test clickability of game spaces
 const gameClick = function (event) {
   event.preventDefault()
-  console.log('clicked a div')
+  console.log('clicked ', (event.target))
   $(event.target).html('X or O')
 }
+// can you do if/then statement for x or o? like if x, put o?
 const signOutClick = function (event) {
   event.preventDefault()
   console.log('clicked signout button')
+  // $('sign-out').hide(event.target), is this even a function that makes sense?
+  // add the token removal function
+}
+const signInClick = function (event) {
+  event.preventDefault()
+  console.log('clicked sign in button')
+  // $('sign-out').hide(event.target), is this even a function that makes sense?
+  // add the token removal function
+}
+const signUpClick = function (event) {
+  event.preventDefault()
+  console.log('clicked sign up button')
+  // $('sign-out').hide(event.target), is this even a function that makes sense?
   // add the token removal function
 }
 
@@ -25,12 +43,58 @@ const signOutClick = function (event) {
 // PATCH	/games/:id	games#update
 // GET	/games/:id/watch	games#watch
 
-// click handler for divs
-//   >this will reference the new events.js file
-//       > events.js will reference api.js to figure out how to actually carry out the transfer of data
-//           >will also reference ui.js which will hold the cool messages and symbol popups or animations for my div clicks
+const signUpSubmit = function (event) {
+  event.preventDefault()
+  console.log('submit event')
+  const data = getFormFields(event.target)
+  console.log(data)
+
+  gameApi.signUp(data)
+    .then(gameUi.signUpSuccess)
+    .catch(gameUi.signUpError)
+}
+
+const signInSubmit = function (event) {
+  event.preventDefault()
+  console.log('signIn form submitted')
+
+  const data = getFormFields(event.target)
+  console.log('signIn data is ', data)
+
+  gameApi.signIn(data)
+    .then(gameUi.signInSuccess)
+    .catch(gameUi.signInError)
+}
+
+const changePasswordSubmit = function (event) {
+  event.preventDefault()
+  console.log('Password change form submitted')
+
+  const data = getFormFields(event.target)
+  console.log('Password change data is ', data)
+
+  gameApi.changePassword(data)
+    .then(gameUi.changePasswordSuccess)
+    .catch(gameUi.changePasswordError)
+}
+
+const signOutSubmit = function (event) {
+  event.preventDefault()
+  console.log('Sign out clicked')
+
+  gameApi.signOut()
+    .then(gameUi.signOutSuccess)
+    .catch(gameUi.signOutFail)
+}
 
 module.exports = {
   gameClick: gameClick,
-  signOutClick: signOutClick
+  signOutClick: signOutClick,
+  signInClick: signInClick,
+  signUpClick: signUpClick,
+  signUpSubmit: signUpSubmit,
+  signInSubmit: signInSubmit,
+  changePasswordSubmit: changePasswordSubmit,
+  signOutSubmit: signOutSubmit
+
 }

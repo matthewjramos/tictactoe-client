@@ -4,8 +4,22 @@
 // const example = require('./example')
 const gameEvents = require('./events.js')
 
-$('.box').on('click', gameEvents.gameClick)
-$('#sign-out').on('click', gameEvents.signOutClick)
+$(() => {
+  $('.box').on('click', gameEvents.gameClick)
+  // $('#sign-out').on('click', gameEvents.signOutClick)
+  // $('#sign-in').on('click', gameEvents.signInClick)
+  // $('#sign-up').on('click', gameEvents.signUpClick)
+
+  $('#sign-up').on('submit', gameEvents.signUpSubmit)
+  $('#sign-in').on('submit', gameEvents.signInSubmit)
+  $('#change-password').on('submit', gameEvents.changePasswordSubmit)
+  $('#sign-out').on('click', gameEvents.signOutSubmit)
+
+  // create game button
+  // reset game button
+
+  // bonus - customize graphics button
+})
 //
 // click handler for divs
 //   >this will reference the new events.js file

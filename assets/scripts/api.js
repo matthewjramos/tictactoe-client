@@ -1,19 +1,62 @@
 'use strict'
 
+// const config = require('./config.js')
+const store = require('./store.js')
 
-// POST	/sign-up	users#signup
-// POST	/sign-in	users#signin
-// DELETE	/sign-out	users#signout
-// PATCH	/change-password	users#changepw
+// POST	/sign-up	users#signup - done
+// POST	/sign-in	users#signin - done
+// DELETE	/sign-out	users#signout - done
+// PATCH	/change-password	users#changepw - done
 // GET	/games	games#index
 // POST	/games	games#create
 // GET	/games/:id	games#show
 // PATCH	/games/:id	games#update
 // GET	/games/:id/watch	games#watch
 
-//
-//
-// click handler for divs
-//   >this will reference the new events.js file
-//       > events.js will reference api.js to figure out how to actually carry out the transfer of data
-//           >will also reference ui.js which will hold the cool messages and symbol popups or animations for my div clicks
+const signUp = function (data) {
+  return $.ajax({
+    method: 'POST',
+    url: 'https://tic-tac-toe-wdi.herokuapp.com/sign-up',
+    data: data
+  })
+}
+
+const signIn = function (data) {
+  return $.ajax({
+    method: 'POST',
+    url: 'https://tic-tac-toe-wdi.herokuapp.com/sign-in',
+    data: data
+  })
+}
+
+const changePassword = function (data) {
+  console.log('store is ', store)
+  console.log('token is ', store.user.token)
+  return $.ajax({
+    method: 'PATCH',
+    url: 'https://tic-tac-toe-wdi.herokuapp.com/change-password',
+    data: data,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+    // add token
+  })
+}
+
+const signOut = function () {
+  return $.ajax({
+    method: 'DELETE',
+    url: 'https://tic-tac-toe-wdi.herokuapp.com/sign-out',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+    // add token
+  })
+}
+
+module.exports = {
+  signUp: signUp,
+  signIn: signIn,
+  changePassword: changePassword,
+  signOut: signOut
+}
