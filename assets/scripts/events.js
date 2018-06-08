@@ -11,26 +11,30 @@ const gameUi = require('./ui.js')
 const gameClick = function (event) {
   event.preventDefault()
   console.log('clicked ', (event.target))
-  $(event.target).html('X or O')
+  // $(event.target).html('X or O')
+  // if ($(event.target).text('x') === true) {
+  if ($(event.target).text() === "x") {
+  // if ($event.target).text('x')) {
+  // if ($(event.target).text() ('x'){
+    $(event.target).text('o')
+  } else if
+  ($(event.target).text('o')) {
+    $(event.target).text('x')
+  }
 }
+
 // can you do if/then statement for x or o? like if x, put o?
 const signOutClick = function (event) {
   event.preventDefault()
   console.log('clicked signout button')
-  // $('sign-out').hide(event.target), is this even a function that makes sense?
-  // add the token removal function
 }
 const signInClick = function (event) {
   event.preventDefault()
   console.log('clicked sign in button')
-  // $('sign-out').hide(event.target), is this even a function that makes sense?
-  // add the token removal function
 }
 const signUpClick = function (event) {
   event.preventDefault()
   console.log('clicked sign up button')
-  // $('sign-out').hide(event.target), is this even a function that makes sense?
-  // add the token removal function
 }
 
 // POST	/sign-up	users#signup
@@ -104,6 +108,8 @@ const createGamesSubmit = function (event) {
     .then(gameUi.createGamesSuccess)
     .catch(gameUi.createGamesFail)
 }
+
+
 
 module.exports = {
   gameClick: gameClick,
