@@ -87,6 +87,24 @@ const signOutSubmit = function (event) {
     .catch(gameUi.signOutFail)
 }
 
+const getGamesSubmit = function (event) {
+  event.preventDefault()
+  console.log('get games clicked')
+
+  gameApi.getGames()
+    .then(gameUi.getGamesSuccess)
+    .catch(gameUi.getGamesFail)
+}
+
+const createGamesSubmit = function (event) {
+  event.preventDefault()
+  console.log('create games clicked')
+
+  gameApi.createGames()
+    .then(gameUi.createGamesSuccess)
+    .catch(gameUi.createGamesFail)
+}
+
 module.exports = {
   gameClick: gameClick,
   signOutClick: signOutClick,
@@ -95,6 +113,8 @@ module.exports = {
   signUpSubmit: signUpSubmit,
   signInSubmit: signInSubmit,
   changePasswordSubmit: changePasswordSubmit,
-  signOutSubmit: signOutSubmit
+  signOutSubmit: signOutSubmit,
+  getGamesSubmit: getGamesSubmit,
+  createGamesSubmit: createGamesSubmit
 
 }

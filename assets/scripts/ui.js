@@ -39,6 +39,20 @@ const signOutFail = function (error) {
   console.log('failed to sign out, per ', error)
 }
 
+const getGamesSuccess = function (data) {
+  console.log('get games success is ', data)
+}
+const getGamesFail = function (error) {
+  console.log('failed to get games per ', error)
+}
+
+const createGamesSuccess = function (data) {
+  console.log('create games success is ', data)
+}
+const createGamesFail = function (error) {
+  console.log('failed to create games per ', error)
+}
+
 module.exports = {
   signUpSuccess: signUpSuccess,
   signUpError: signUpError,
@@ -47,5 +61,9 @@ module.exports = {
   changePasswordSuccess: changePasswordSuccess,
   changePasswordError: changePasswordError,
   signOutSuccess: signOutSuccess,
-  signOutFail: signOutFail
+  signOutFail: signOutFail,
+  getGamesSuccess: getGamesSuccess,
+  getGamesFail: getGamesFail,
+  createGamesSuccess: createGamesSuccess,
+  createGamesFail: createGamesFail
 }

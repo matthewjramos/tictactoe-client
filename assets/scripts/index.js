@@ -15,6 +15,9 @@ $(() => {
   $('#change-password').on('submit', gameEvents.changePasswordSubmit)
   $('#sign-out').on('click', gameEvents.signOutSubmit)
 
+  $('#get-games').on('click', gameEvents.getGamesSubmit)
+  $('#create-games').on('click', gameEvents.createGamesSubmit)
+
   // create game button
   // reset game button
 
