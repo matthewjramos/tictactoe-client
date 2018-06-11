@@ -53,9 +53,12 @@ const getGamesFail = function (error) {
   $('#content').html('get games failed ', error)
 }
 
-const createGamesSuccess = function (data) {
-  console.log('create games success is ', data)
-  $('#content').html('game created success ', data)
+const createGamesSuccess = function (response) {
+  console.log('create games response success is ', response)
+  $('#content').html('game created success ', response)
+  store.games = response.games
+  const gameBoard = []
+  console.log(gameBoard)
 }
 const createGamesFail = function (error) {
   console.log('failed to create games per ', error)

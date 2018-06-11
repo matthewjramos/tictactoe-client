@@ -67,7 +67,7 @@ const getGames = function (data) {
 const createGames = function (data) {
   return $.ajax({
     method: 'POST',
-    url: 'https://tic-tac-toe-wdi.herokuapp.com/games:id',
+    url: 'https://tic-tac-toe-wdi.herokuapp.com/games',
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
@@ -77,7 +77,11 @@ const createGames = function (data) {
 const updateGames = function (data) {
   return $.ajax({
     method: 'PATCH',
-    url: 'https://tic-tac-toe-wdi.herokuapp.com/games:id'
+    url: 'https://tic-tac-toe-wdi.herokuapp.com/games' + store.user.game,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    body: 'game delta'
   })
 }
 
