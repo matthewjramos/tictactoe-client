@@ -10,8 +10,8 @@ const store = require('./store.js')
 // GET	/games	games#index
 // POST	/games	games#create
 // GET	/games/:id	games#show
-// PATCH	/games/:id	games#update
-// GET	/games/:id/watch	games#watch
+// PATCH/games/:id	games#update
+// GET/games/:id/watch	games#watch
 
 const signUp = function (data) {
   return $.ajax({
@@ -67,10 +67,17 @@ const getGames = function (data) {
 const createGames = function (data) {
   return $.ajax({
     method: 'POST',
-    url: 'https://tic-tac-toe-wdi.herokuapp.com/games',
+    url: 'https://tic-tac-toe-wdi.herokuapp.com/games:id',
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
+  })
+}
+
+const updateGames = function (data) {
+  return $.ajax({
+    method: 'PATCH',
+    url: 'https://tic-tac-toe-wdi.herokuapp.com/games:id'
   })
 }
 
@@ -80,5 +87,6 @@ module.exports = {
   changePassword: changePassword,
   signOut: signOut,
   getGames: getGames,
-  createGames: createGames
+  createGames: createGames,
+  updateGames: updateGames
 }

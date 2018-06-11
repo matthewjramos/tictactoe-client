@@ -15,6 +15,8 @@
 
   <h1>Game board</h1>
 
+  <div id="content"></div>
+
   <div class="row">
     <div data-cell-index='0'id="game-space-1" class="col-sm-3 box"></div>
     <div data-cell-index='1' id="game-space-2" class="col-sm-3 box"></div>
@@ -23,7 +25,7 @@
       <form id="sign-up">
         <input name="credentials[email]" type="text" placeholder="email">
         <input name="credentials[password]" type="password" placeholder="password">
-        <input name="credentials[password_confirmation]" type="password" placeholder=""="confirm">
+        <input name="credentials[password_confirmation]" type="password" placeholder="confirm">
         <button type="submit">Sign up!</button>
         <!-- id="signup-button" -->
       </form>
@@ -59,7 +61,26 @@
 
   <button id="get-games">get games</button>
   <button id="create-games">create games</button>
+  <button id="update-games">update games</button>
 
+  <div class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div id="modal-alert" class="modal-body">
+          <p></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
     </body>
 </html>

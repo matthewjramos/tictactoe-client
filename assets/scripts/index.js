@@ -17,6 +17,7 @@ $(() => {
 
   $('#get-games').on('click', gameEvents.getGamesSubmit)
   $('#create-games').on('click', gameEvents.createGamesSubmit)
+  $('#update-games').on('click', gameEvents.updateGamesSubmit)
 
   // create game button
   // reset game button
