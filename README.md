@@ -4,4 +4,8 @@ README for Tic Tac Toe game
 
 INSTRUCTIONS:
 
+Create an account using an email address and password.
+
+Log in to your account after creation.
+
 Match 3 X's or O's in a row vertically, horizontally, or diagonally to win!
