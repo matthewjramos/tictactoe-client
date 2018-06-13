@@ -13,11 +13,11 @@
     </head>
     <body class="container-fluid">
 
-  <h1>Game board</h1>
+  <h1>TIC TAC TOE</h1>
 
-  <div id="content"></div>
+  <div class="center-block" id="content"></div>
 
-  <div class="row">
+  <div id="toprow" class="row">
     <div data-cell-index='0'id="0" class="col-sm-3 box"></div>
     <div data-cell-index='1' id="1" class="col-sm-3 box"></div>
     <div data-cell-index='2' id="2" class="col-sm-3 box"></div>
@@ -37,16 +37,16 @@
     </div>
   </div>
 
-  <div class="row">
+  <div id="middlerow" class="row">
     <div data-cell-index='3' id="3" class="col-sm-3 box"></div>
     <div data-cell-index='4' id="4" class="col-sm-3 box"></div>
     <div data-cell-index='5' id="5" class="col-sm-3 box"></div>
     <div class="col-md-3">
-    <button id="sign-out" >Sign Out!</button>
+    <button id="sign-out">Sign Out!</button>
     </div>
   </div>
 
-  <div class="row">
+  <div id="bottomrow" class="row">
     <div data-cell-index='6' id="6" class="col-sm-3 box"></div>
     <div data-cell-index='7' id="7" class="col-sm-3 box"></div>
     <div data-cell-index='8' id="8" class="col-sm-3 box"></div>
@@ -59,9 +59,7 @@
     </div>
   </div>
 
-  <button id="get-games">get games</button>
-  <button id="create-games">create games</button>
-  <button id="update-games">update games</button>
+
 
   <div class="modal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
@@ -82,5 +80,12 @@
     </div>
   </div>
 
+<div id="buttonrow" class="row">
+  <div class="col-sm-12 mx-auto">
+  <button id="get-games">get games</button>
+  <button id="create-games">create games</button>
+  <!-- <button id="update-games">update games</button> -->
+  </div>
+</div>
     </body>
 </html>

@@ -59,29 +59,45 @@ const getGames = function (data) {
     method: 'GET',
     url: 'https://tic-tac-toe-wdi.herokuapp.com/games',
     headers: {
+      contentType: 'application/json',
       Authorization: 'Token token=' + store.user.token
     }
   })
 }
 
 const createGames = function (data) {
+  console.log('data is ', data)
   return $.ajax({
     method: 'POST',
     url: 'https://tic-tac-toe-wdi.herokuapp.com/games',
     headers: {
+      contentType: 'application/json',
       Authorization: 'Token token=' + store.user.token
     }
   })
 }
 
-const updateGames = function (data) {
-  return $.ajax({
-    method: 'PATCH',
-    url: 'https://tic-tac-toe-wdi.herokuapp.com/games' + store.user.game,
-    headers: {
-      Authorization: 'Token token=' + store.user.token
+const data = {
+  'game': {
+    'cell': {
+      'index': store.index,
+      'value': store.player
     },
-    body: 'game delta'
+    'over': store.game
+  }
+}
+
+const updateGames = function (data) {
+  console.log(store.game.id)
+  console.log('data is ', data)
+  return $.ajax({
+    url: 'https://tic-tac-toe-wdi.herokuapp.com/games/' + store.game.id,
+    method: 'PATCH',
+    headers: {
+      contentType: 'application/json',
+      Authorization: 'Token token=' + store.user.token
+    }
+    // body: 'game delta',
   })
 }
 
@@ -93,4 +109,5 @@ module.exports = {
   getGames: getGames,
   createGames: createGames,
   updateGames: updateGames
+  // data: data
 }

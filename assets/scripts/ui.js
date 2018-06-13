@@ -19,7 +19,7 @@ const signUpError = function (error) {
 const signInSuccess = function (response) {
   console.log('response is ', response)
   store.user = response.user
-  $('#content').html('signed in success ', store.user.email)
+  $('#content').html('signed in success ', store.user.id)
 }
 const signInError = function (error) {
   console.log('signInError is ', error)
@@ -53,13 +53,17 @@ const getGamesFail = function (error) {
   $('#content').html('get games failed ', error)
 }
 
-const createGamesSuccess = function (response) {
-  console.log('create games response success is ', response)
-  $('#content').html('game created success ', response)
-  store.games = response.games
-  const gameBoard = []
+const createGamesSuccess = function (data) {
+  console.log('create games data success is ', data)
+  $('#content').html('game created success ', data)
+  store.game = data.game
+  console.log('resetting board')
+  const gameBoard = ['', '', '', '', '', '', '', '', '']
+  $('.box').show()
+  $('.box').html('')
   console.log(gameBoard)
 }
+
 const createGamesFail = function (error) {
   console.log('failed to create games per ', error)
   $('#content').html('failed to create games per ', error)
