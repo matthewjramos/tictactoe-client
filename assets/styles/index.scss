@@ -6,6 +6,14 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   background-color: #eda740;
 }
 
+#placeholder {
+  display: none;
+}
+
+.start-hidden {
+  display: none;
+}
+
 #content {
   height: 35px;
   width: 30%;

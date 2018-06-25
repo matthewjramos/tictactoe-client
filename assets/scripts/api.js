@@ -3,16 +3,6 @@
 // const config = require('./config.js')
 const store = require('./store.js')
 
-// POST	/sign-up	users#signup - done
-// POST	/sign-in	users#signin - done
-// DELETE	/sign-out	users#signout - done
-// PATCH	/change-password	users#changepw - done
-// GET	/games	games#index
-// POST	/games	games#create
-// GET	/games/:id	games#show
-// PATCH/games/:id	games#update
-// GET/games/:id/watch	games#watch
-
 const signUp = function (data) {
   return $.ajax({
     method: 'POST',
@@ -30,8 +20,8 @@ const signIn = function (data) {
 }
 
 const changePassword = function (data) {
-  console.log('store is ', store)
-  console.log('token is ', store.user.token)
+  // console.log('store is ', store)
+  // console.log('token is ', store.user.token)
   return $.ajax({
     method: 'PATCH',
     url: 'https://aqueous-atoll-85096.herokuapp.com/change-password',
@@ -65,39 +55,61 @@ const getGames = function (data) {
   })
 }
 
-const createGames = function (data) {
-  console.log('data is ', data)
+const createGames = function () {
+  // console.log('data is ', data)
   return $.ajax({
     method: 'POST',
     url: 'https://aqueous-atoll-85096.herokuapp.com/games',
     headers: {
       contentType: 'application/json',
       Authorization: 'Token token=' + store.user.token
+    },
+    data: {
+      'game': {
+        'cell': {
+          'index': store.index,
+          'value': store.player
+        },
+        'over': store.game
+      }
     }
   })
 }
 
-const data = {
-  'game': {
-    'cell': {
-      'index': store.index,
-      'value': store.player
-    },
-    'over': store.game
-  }
-}
+// const data = {
+//   'game': {
+//     'cell': {
+//       'index': store.index,
+//       'value': store.player
+//     },
+//     'over': store.game
+//   }
+// }
 
-const updateGames = function (data) {
-  console.log(store.game.id)
-  console.log('data is ', data)
+const updateGames = function () {
+  // console.log('store.game.id is ', store.game.id)
+  // console.log('event.target inner html is ', event.target.innerHTML)
+  // console.log('store.user.email is ', store.user.email)
+  // console.log('store.game is ', store.game)
+  // console.log('store game over is ', store.game.over)
+  // console.log('event target is ', event.target)
+  // console.log('event target id is ', event.target.id)
   return $.ajax({
     url: 'https://aqueous-atoll-85096.herokuapp.com/games/' + store.game.id,
     method: 'PATCH',
     headers: {
       contentType: 'application/json',
       Authorization: 'Token token=' + store.user.token
+    },
+    data: {
+      'game': {
+        'cell': {
+          'index': event.target.id,
+          'value': event.target.innerHTML
+        },
+        'over': store.game.over
+      }
     }
-    // body: 'game delta',
   })
 }
 
