@@ -17,7 +17,7 @@ const signUpSuccess = function (signUpResponse) {
 }
 
 const signUpError = function (error) {
-  // console.log('signUpError is ', error)
+  $('#content').html('Signup unsuccessful')
 }
 
 const signInSuccess = function (response) {
@@ -66,12 +66,12 @@ const getGamesSuccess = function (data) {
 }
 const getGamesFail = function (error) {
   // console.log('failed to get games per ', error)
-  $('#content').html('get games failed ', error)
+  $('#content').html('Failed to get games', error)
 }
 
 const createGamesSuccess = function (data) {
   // console.log('create games data success is ', data)
-  $('#content').html('game created success ', data)
+  $('#content').html('Game created successfuly! ', data)
   store.game = data.game
   // console.log('resetting board')
   const gameBoard = []
@@ -83,7 +83,7 @@ const createGamesSuccess = function (data) {
 
 const createGamesFail = function (error) {
   // console.log('failed to create games per ', error)
-  $('#content').html('failed to create games per ', error)
+  $('#content').html('Failed to create game ', error)
 }
 const updateGamesSuccess = function (data) {
   // console.log('update games success is ', data)
@@ -92,7 +92,7 @@ const updateGamesSuccess = function (data) {
 }
 const updateGamesFail = function (error) {
   // console.log('failed to update games per ', error)
-  // $('#content').html('failed to update games per ', error)
+  // $('#content').html('Failed to update game', error)
 }
 
 module.exports = {
