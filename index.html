@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Tic Tac Toe</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body class="container-fluid">
+
+  <h1>TIC TAC TOE</h1>
+
+  <div class="center-block" id="content"></div>
+
+  <div id="placeholder" class="col-sm-9"></div>
+
+  <div id="toprow" class="row">
+    <div data-cell-index='0'id="0" class="col-sm-3 box"></div>
+    <div data-cell-index='1' id="1" class="col-sm-3 box"></div>
+    <div data-cell-index='2' id="2" class="col-sm-3 box"></div>
+    <div class="col-md-3">
+      <form id="sign-up">
+        <input name="credentials[email]" type="text" placeholder="email">
+        <input name="credentials[password]" type="password" placeholder="password">
+        <input name="credentials[password_confirmation]" type="password" placeholder="confirm">
+        <button type="submit">Sign up!</button>
+        <!-- id="signup-button" -->
+      </form>
+      <form id="sign-in">
+      <input name="credentials[email]" type="text" placeholder="email">
+      <input name="credentials[password]" type="password" placeholder="password">
+      <button id="signin-button" type="submit">Sign in!</button>
+    </form>
+    </div>
+  </div>
+
+  <div id="middlerow" class="row">
+    <div data-cell-index='3' id="3" class="col-sm-3 box"></div>
+    <div data-cell-index='4' id="4" class="col-sm-3 box"></div>
+    <div data-cell-index='5' id="5" class="col-sm-3 box"></div>
+    <div class="col-md-3">
+    <button id="sign-out" class="start-hidden">Sign Out!</button>
+    </div>
+  </div>
+
+  <div id="bottomrow" class="row">
+    <div data-cell-index='6' id="6" class="col-sm-3 box"></div>
+    <div data-cell-index='7' id="7" class="col-sm-3 box"></div>
+    <div data-cell-index='8' id="8" class="col-sm-3 box"></div>
+    <div class="col-md-3">
+      <form id="change-password" class="start-hidden">
+    <input name="passwords[old]" type="password" placeholder="old password">
+    <input name="passwords[new]" type="password" placeholder="new password">
+    <button type="submit">Change Password</button>
+      </form>
+    </div>
+  </div>
+
+<div id="buttonrow" class="row">
+  <div class="col-sm-12 mx-auto">
+  <button id="get-games" class="start-hidden">Get Games</button>
+  <button id="create-games" class="start-hidden">Create Game</button>
+  <!-- <button id="update-games">update games</button> -->
+  </div>
+</div>
+    </body>
+</html>
