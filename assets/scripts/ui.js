@@ -3,7 +3,6 @@
 const store = require('./store.js')
 const gameEvents = require('./events.js')
 
-
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
 //
@@ -17,12 +16,12 @@ const signUpSuccess = function (signUpResponse) {
 }
 
 const signUpError = function (error) {
-  $('#content').html('Signup unsuccessful')
+  $('#content').html('Signup unsuccessful', error)
 }
 
 const signInSuccess = function (response) {
   store.user = response.user
-  $('#content').html('Signed in successfully!')
+  $('#content').html('Signed in successfully! Please create game.')
   $('#sign-in').hide()
   $('#sign-up').hide()
   // $('#sign-out').show()
@@ -74,11 +73,13 @@ const createGamesSuccess = function (data) {
   $('#content').html('Game created successfuly! ', data)
   store.game = data.game
   // console.log('resetting board')
-  const gameBoard = []
+  // const gameBoard = []
   $('.box').show()
   $('.box').html('')
-  // $('.box').on('click')
+  $('.box').on('click', gameEvents.gameClick)
   // console.log(gameBoard)
+  // $('.box').html('').prop('disabled', false)
+  // $('.box').html('').prop('disabled', false)
 }
 
 const createGamesFail = function (error) {
@@ -92,7 +93,7 @@ const updateGamesSuccess = function (data) {
 }
 const updateGamesFail = function (error) {
   // console.log('failed to update games per ', error)
-  // $('#content').html('Failed to update game', error)
+  $('#content').html('Failed to update game', error)
 }
 
 module.exports = {

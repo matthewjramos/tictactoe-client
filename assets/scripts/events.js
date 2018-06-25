@@ -6,20 +6,16 @@ const gameUi = require('./ui.js')
 const gameBoard = []
 const store = require('./store.js')
 
-
 // below function used to test clickability of game spaces
 
-
-//board starts hidden, or unclickable
+// board starts hidden, or unclickable
 // hide placeholder div when board loads/appears
-// change password starts hidden
+//  change password starts hidden
 // sign out starts hidden
 // get games starts hidden
 // fix patch api
-//add click/turn count for tie functionality
-//remove console logs
-
-
+// add click/turn count for tie functionality
+// remove console logs
 
 let clickCount = 0
 const gameClick = function (event) {
@@ -37,11 +33,14 @@ const gameClick = function (event) {
     ($(event.target).html('o'))
     $('#content').html('X turn')
   }
-  // $(event.target).off('click')
+  $(event.target).off('click')
   // $(event.target):disabled
+  // need to test this with above
+  // $(event.target).textinput('disable')
+
   gameBoard[index] = ($(event.target).html())
   // console.log(gameBoard)
-  $(event.target).off('click')
+  // $(event.target).off('click')
 
   const checkWin = function () {
     if (clickCount >= 5 && gameBoard[0] === 'x' && gameBoard[1] === 'x' && gameBoard[2] === 'x') {
@@ -52,7 +51,7 @@ const gameClick = function (event) {
       store.game.over = true
       clickCount = 0
       gameBoard.length = 0
-      $('.box').on('click')
+      // $('.box').on('click')
     } else if (clickCount >= 5 && gameBoard[3] === 'x' && gameBoard[4] === 'x' && gameBoard[5] === 'x') {
       $('.box').toggle()
       $('.box').html(' ')
@@ -60,7 +59,7 @@ const gameClick = function (event) {
       store.game.over = true
       clickCount = 0
       gameBoard.length = 0
-      $('.box').on('click')
+      // $('.box').on('click')
     } else if (clickCount >= 5 && gameBoard[6] === 'x' && gameBoard[7] === 'x' && gameBoard[8] === 'x') {
       $('.box').toggle()
       $('.box').html(' ')
@@ -68,7 +67,7 @@ const gameClick = function (event) {
       store.game.over = true
       clickCount = 0
       gameBoard.length = 0
-      $('.box').on('click')
+      // $('.box').on('click')
     } else if (clickCount >= 5 && gameBoard[0] === 'x' && gameBoard[3] === 'x' && gameBoard[6] === 'x') {
       $('.box').toggle()
       $('.box').html(' ')
@@ -76,7 +75,7 @@ const gameClick = function (event) {
       store.game.over = true
       clickCount = 0
       gameBoard.length = 0
-      $('.box').on('click')
+      // $('.box').on('click')
     } else if (clickCount >= 5 && gameBoard[1] === 'x' && gameBoard[4] === 'x' && gameBoard[7] === 'x') {
       $('.box').toggle()
       $('.box').html(' ')
@@ -84,7 +83,7 @@ const gameClick = function (event) {
       store.game.over = true
       clickCount = 0
       gameBoard.length = 0
-      $('.box').on('click')
+      // $('.box').on('click')
     } else if (clickCount >= 5 && gameBoard[2] === 'x' && gameBoard[5] === 'x' && gameBoard[8] === 'x') {
       $('.box').toggle()
       $('.box').html(' ')
@@ -92,7 +91,7 @@ const gameClick = function (event) {
       store.game.over = true
       clickCount = 0
       gameBoard.length = 0
-      $('.box').on('click')
+      // $('.box').on('click')
     } else if (clickCount >= 5 && gameBoard[0] === 'x' && gameBoard[4] === 'x' && gameBoard[8] === 'x') {
       $('.box').toggle()
       $('.box').html(' ')
@@ -100,7 +99,7 @@ const gameClick = function (event) {
       store.game.over = true
       clickCount = 0
       gameBoard.length = 0
-      $('.box').on('click')
+      // $('.box').on('click')
     } else if (clickCount >= 5 && gameBoard[2] === 'x' && gameBoard[4] === 'x' && gameBoard[6] === 'x') {
       $('.box').toggle()
       $('.box').html(' ')
@@ -108,7 +107,7 @@ const gameClick = function (event) {
       store.game.over = true
       clickCount = 0
       gameBoard.length = 0
-      $('.box').on('click')
+      // $('.box').on('click')
     } else if (clickCount >= 5 && gameBoard[0] === 'o' && gameBoard[1] === 'o' && gameBoard[2] === 'o') {
       $('.box').toggle()
       $('.box').html(' ')
@@ -116,7 +115,7 @@ const gameClick = function (event) {
       store.game.over = true
       clickCount = 0
       gameBoard.length = 0
-      $('.box').on('click')
+      // $('.box').on('click')
     } else if (clickCount >= 5 && gameBoard[3] === 'o' && gameBoard[4] === 'o' && gameBoard[5] === 'o') {
       $('.box').toggle()
       $('.box').html(' ')
@@ -124,7 +123,7 @@ const gameClick = function (event) {
       store.game.over = true
       clickCount = 0
       gameBoard.length = 0
-      $('.box').on('click')
+      // $('.box').on('click')
     } else if (clickCount >= 5 && gameBoard[6] === 'o' && gameBoard[7] === 'o' && gameBoard[8] === 'o') {
       $('.box').toggle()
       $('.box').html(' ')
@@ -132,7 +131,7 @@ const gameClick = function (event) {
       store.game.over = true
       clickCount = 0
       gameBoard.length = 0
-      $('.box').on('click')
+      // $('.box').on('click')
     } else if (clickCount >= 5 && gameBoard[0] === 'o' && gameBoard[3] === 'o' && gameBoard[6] === 'o') {
       $('.box').toggle()
       $('.box').html(' ')
@@ -140,7 +139,7 @@ const gameClick = function (event) {
       store.game.over = true
       clickCount = 0
       gameBoard.length = 0
-      $('.box').on('click')
+      // $('.box').on('click')
     } else if (clickCount >= 5 && gameBoard[1] === 'o' && gameBoard[4] === 'o' && gameBoard[7] === 'o') {
       $('.box').toggle()
       $('.box').html(' ')
@@ -148,7 +147,7 @@ const gameClick = function (event) {
       store.game.over = true
       clickCount = 0
       gameBoard.length = 0
-      $('.box').on('click')
+      // $('.box').on('click')
     } else if (clickCount >= 5 && gameBoard[2] === 'o' && gameBoard[5] === 'o' && gameBoard[8] === 'o') {
       $('.box').toggle()
       $('.box').html(' ')
@@ -156,7 +155,7 @@ const gameClick = function (event) {
       store.game.over = true
       clickCount = 0
       gameBoard.length = 0
-      $('.box').on('click')
+      // $('.box').on('click')
     } else if (clickCount >= 5 && gameBoard[0] === 'o' && gameBoard[4] === 'o' && gameBoard[8] === 'o') {
       $('.box').toggle()
       $('.box').html(' ')
@@ -164,7 +163,7 @@ const gameClick = function (event) {
       store.game.over = true
       clickCount = 0
       gameBoard.length = 0
-      $('.box').on('click')
+      // $('.box').on('click')
     } else if (clickCount >= 5 && gameBoard[2] === 'o' && gameBoard[4] === 'o' && gameBoard[6] === 'o') {
       $('.box').toggle()
       $('.box').html(' ')
@@ -172,14 +171,14 @@ const gameClick = function (event) {
       store.game.over = true
       clickCount = 0
       gameBoard.length = 0
-      $('.box').on('click')
+      // $('.box').on('click')
     } else if (clickCount === 9) {
       $('#content').html('draw')
       $('.box').html(' ')
       $('.box').toggle()
       store.game.over = true
       clickCount = 0
-      $('.box').on('click')
+      // $('.box').on('click')
     }
   }
   updateGamesSubmit()
@@ -237,13 +236,14 @@ const getGamesSubmit = function (event) {
 
 const createGamesSubmit = function (event) {
   event.preventDefault()
+  $('.box').on('click')
+
   // const gameBoard = []
   // console.log('create games clicked')
   gameApi.createGames()
     .then(gameUi.createGamesSuccess)
     .catch(gameUi.createGamesFail)
-  $('.box').html('')
-}
+  }
 
 const updateGamesSubmit = function (data) {
   event.preventDefault()
